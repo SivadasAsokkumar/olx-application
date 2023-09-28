@@ -1,0 +1,40 @@
+{%extends 'base.html'%}
+{%block body_block%}
+<div class="container">
+        
+    <div class="row mt-3">
+        <div class="col-2"></div>
+        <div class="col-8">
+
+            <table class="table table-light table-striped-columns table table-hover table table-bordered">
+                <tr>
+                    <td>Name</td>
+                    <td>Model</td>
+                    <td>Company</td>
+                    <td>Mileage</td>
+                    <td>Action</td>
+                </tr>
+
+                {%for mt in motors%}
+                    <tr>
+                            <td>{{mt.name}}</td>
+                            <td>{{mt.model}}</td>
+                            <td>{{mt.company}}</td>
+                            <td>{{mt.mileage}}</td>
+                            
+                           <td class="px-2">
+                            <a href="{%url 'mot-detail' mt.id%}" class="ms-1"><i class="fa-regular fa-eye fa-shake text-info"></i></a>
+                            <a href="{%url 'mot-delete' mt.id%}" class="ms-1"><i class="fa-solid fa-trash text-danger"></i></a>
+                            <a href="{%url 'mot-update' mt.id%}" class="ms-1"><i class="fa-solid fa-pen-to-square text-warning"></i></a>
+                        </td>
+                    </tr>
+                {%endfor%}
+
+            </table>
+
+
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+{%endblock%}

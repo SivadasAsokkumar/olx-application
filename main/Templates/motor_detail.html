@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{%block title_block%}
+<title>Motor Details</title>
+{%endblock%}
+{%block body_block%}
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    {%if motor.image%}
+                      <img src="{{motor.image.url}}" alt="" width="100%">
+                    {%endif%}
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">{{motor.name}}</li>
+                  <li class="list-group-item">{{motor.model}}</li>
+                  <li class="list-group-item">{{motor.company}}</li>
+                  <li class="list-group-item">{{motor.mileage}}</li>
+                </ul>
+              </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+{%endblock%}

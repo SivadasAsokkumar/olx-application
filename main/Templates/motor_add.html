@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{%block title_block%}
+<title>Motor Add</title>
+{%endblock%}
+{%block body_block%}
+<h1 class=text-center>Add New Motors</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <form action="" method="post"  enctype="multipart/form-data"  class="p-4 border shadow">
+                    {%csrf_token%}
+                    {{form.as_p}}
+                    <button type="submit" class="form-control btn btn-outline-primary">Add Motor</button>
+                    <a href="{%url 'mot-list' %}" class="text-center">List View</a>
+                </form>
+            </div>
+            <div class="col-4"></div>
+            
+               
+            
+        </div>
+
+    </div> 
+{%endblock%}
